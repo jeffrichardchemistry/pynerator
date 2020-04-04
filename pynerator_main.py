@@ -1,5 +1,6 @@
 from pynerator_ui import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
+from PyQt5 import QtCore
 import sys
 import random
 
@@ -22,12 +23,36 @@ class Pynerator(QMainWindow, QWidget):
         self.spinuppercase_value = 0
     
     def Init(self):
-        self.pyneratorui.btn_generate.clicked.connect(self.generate) #connect buton to a function
-        self.pyneratorui.spinBox_character.setMaximum(len(self.characters)) #max value to spinbox
-        self.pyneratorui.spinBox_uppercase.setMaximum(len(self.uppercase)) #max value to spinbox
-        self.pyneratorui.spinBox_number.setMaximum(len(self.numbers)) #max value to spinbox
-        self.pyneratorui.spinBox_specialchar.setMaximum(len(self.special_characters)) #max value to spinbox
+        self.pyneratorui.btn_generate.clicked.connect(self.generate) #connect button in a function
+        self.pyneratorui.chkbox_character.stateChanged.connect(self.checkAndreset_char)
+        self.pyneratorui.chkbox_number.stateChanged.connect(self.checkAndreset_number)
+        self.pyneratorui.chkbox_specialchar.stateChanged.connect(self.checkAndreset_specialchar)
+        self.pyneratorui.chkbox_uppercase.stateChanged.connect(self.checkAndreset_upper)
+
+    def checkAndreset_char(self):
+        if self.pyneratorui.chkbox_character.checkState() == 0:
+            self.pyneratorui.spinBox_character.setValue(0)
+        else:
+            pass
+
+    def checkAndreset_number(self):
+        if self.pyneratorui.chkbox_number.checkState() == 0:
+            self.pyneratorui.spinBox_number.setValue(0)
+        else:
+            pass
     
+    def checkAndreset_specialchar(self):
+        if self.pyneratorui.chkbox_specialchar.checkState() == 0:
+            self.pyneratorui.spinBox_specialchar.setValue(0)
+        else:
+            pass
+    
+    def checkAndreset_upper(self):
+        if self.pyneratorui.chkbox_uppercase.checkState() == 0:
+            self.pyneratorui.spinBox_uppercase.setValue(0)
+        else:
+            pass
+
     def generate(self):
         Pynerator.checkGetspin(self)
         password = ''.join(random.choices(self.characters, k=self.spinchar_value)) + \
