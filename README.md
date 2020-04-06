@@ -1,5 +1,5 @@
 # About<br>
-<p>Pynerator is a simple application to generate random passwords/codes, desenvolve using python and pyqt5.</p>
+<p>Pynerator is a simple application to generate random passwords/codes, desenvolved using python and pyqt5.</p>
 
 # Install
 <b>Via pip</b><br>
