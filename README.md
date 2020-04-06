@@ -6,10 +6,8 @@
 pip3 install pynerator
 
 <b>Via github</b><br>
-git clone https://github.com/jeffrichardchemistry/pynerator
-
-cd pynerator
-
+git clone https://github.com/jeffrichardchemistry/pynerator<br>
+cd pynerator<br>
 python3 setup.py install
 
 # Run
@@ -17,6 +15,5 @@ python3 setup.py install
 python3 -m pynerator
 
 <b>As a module</b><br>
-from pynerator import pyneratorgui
-
+from pynerator import pyneratorgui<br>
 pyneratorgui.runGUI()
