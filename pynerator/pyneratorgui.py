@@ -1,4 +1,4 @@
-from pynerator_ui import Ui_MainWindow
+from pynerator.pynerator_ui import Ui_MainWindow
 from PyQt5.QtWidgets import QMainWindow, QWidget, QApplication
 from PyQt5 import QtCore
 import sys
@@ -90,10 +90,9 @@ class Pynerator(QMainWindow, QWidget):
             self.spinuppercase_value = 0 
 
     
-if __name__ == '__main__':
+def runGUI():
     app = QApplication(sys.argv)
     gui = Pynerator()
-    gui.show()   
-    
+    gui.show()		
     sys.exit(app.exec_())
     
